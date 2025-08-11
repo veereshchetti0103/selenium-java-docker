@@ -34,9 +34,13 @@ pipeline{
     }
     post {
         always {
-            echo 'Cleaning up...'
-            bat 'docker rmi veereshchetti/selenium-docker || true'
-            echo 'Cleanup completed.'
+            // echo 'Cleaning up...'
+            // bat 'docker rmi veereshchetti/selenium-docker || true'
+            // echo 'Cleanup completed.'
+            echo 'logging out....'
+            bat 'docker logout'
+            echo 'Logged out successfully'
+
         }
     }
 
