@@ -22,7 +22,7 @@ pipeline{
             }
             steps {
                 echo 'Logging in to Docker Hub...'
-                bat 'docker login -u ${DOCKER_HUB_USR} -p ${DOCKER_HUB_PSW}'
+                bat 'docker login -u %DOCKER_HUB_USR% -p %DOCKER_HUB_PSW%'
                 echo 'Docker login successful.'
 
                 echo 'Pushing Docker image to registry...'
