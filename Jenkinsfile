@@ -1,7 +1,9 @@
-pipeline{
-    agent docker {
-        image 'maven:3.9.4-eclipse-temurin-21'
-        args '-v /var/run/docker.sock:/var/run/docker.sock'
+pipeline {
+    agent {
+        docker {
+            image 'maven:3.9.4-eclipse-temurin-21'
+            args '-v /var/run/docker.sock:/var/run/docker.sock'
+        }
     }
 
     stages {
