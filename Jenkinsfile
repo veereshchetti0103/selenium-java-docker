@@ -26,7 +26,9 @@ pipeline{
                 echo 'Docker login successful.'
 
                 echo 'Pushing Docker image to registry...'
-                bat 'docker push veereshchetti/selenium-docker'
+                bat 'docker push veereshchetti/selenium-docker:latest'
+                bat 'docker tag veereshchetti/selenium-docker:latest veereshchetti/selenium-docker:${env.BUILD_NUMBER}'
+                bat 'docker push veereshchetti/selenium-docker:${env.BUILD_NUMBER}'
                 echo 'Docker image pushed successfully.'
             }
         }
